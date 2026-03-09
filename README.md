@@ -1,9 +1,5 @@
 # 🍔 ByteBites Tinker Activity
 
-> A Python class design project focused on turning a written feature request into a simple object-oriented system.
-
----
-
 ## 📌 Project Overview
 
 The goal of this project was to design and implement the backend structure for a fictional food-ordering app called **ByteBites**. Starting from a written feature request, the system was broken into four core classes: `Customer`, `FoodItem`, `Menu`, and `Transaction`. Each class was designed to represent one part of the app’s functionality, such as storing customer history, representing menu items, filtering menu options, and calculating order totals. The project also included UML drafting, scaffold creation, algorithmic methods, and test validation. Overall, this activity emphasized how planning and design decisions directly shape code structure.
