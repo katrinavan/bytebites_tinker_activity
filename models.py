@@ -1,8 +1,9 @@
-# ByteBites class scaffolds
+# ByteBites class scaffolds and methods
 # Customer stores a customer's name and purchase history.
 # FoodItem stores the name, price, category, and popularity rating of one item.
-# Menu stores the full collection of food items.
-# Transaction stores selected items for one transaction.
+# Menu stores the full collection of food items and supports filtering/sorting.
+# Transaction stores selected items for one transaction and computes totals.
+
 
 class Customer:
     def __init__(self, name, purchase_history=None):
@@ -28,6 +29,12 @@ class Menu:
     def add_item(self, item):
         self.items.append(item)
 
+    def filter_by_category(self, category):
+        return [item for item in self.items if item.category.lower() == category.lower()]
+
+    def sort_by_popularity(self):
+        return sorted(self.items, key=lambda item: item.popularity_rating, reverse=True)
+
 
 class Transaction:
     def __init__(self, selected_items=None):
@@ -36,16 +43,26 @@ class Transaction:
     def add_item(self, item):
         self.selected_items.append(item)
 
+    def calculate_total(self):
+        return sum(item.price for item in self.selected_items)
+
 
 if __name__ == "__main__":
     burger = FoodItem("Spicy Burger", 8.99, "Main", 4.7)
     soda = FoodItem("Large Soda", 2.49, "Drinks", 4.1)
+    cake = FoodItem("Chocolate Cake", 4.50, "Desserts", 4.6)
+    tea = FoodItem("Iced Tea", 2.99, "Drinks", 3.8)
 
-    menu = Menu([burger, soda])
-    order = Transaction([burger])
-    customer = Customer("Katrina", [order])
+    menu = Menu([burger, soda, cake, tea])
 
-    print(customer.name)
-    print(burger.name, burger.price, burger.category, burger.popularity_rating)
-    print(len(menu.items))
-    print(len(order.selected_items))
+    print("Drinks:")
+    for item in menu.filter_by_category("Drinks"):
+        print(item.name)
+
+    print("\nSorted by popularity:")
+    for item in menu.sort_by_popularity():
+        print(item.name, item.popularity_rating)
+
+    order = Transaction([burger, soda, cake])
+    print("\nOrder total:")
+    print(order.calculate_total())
