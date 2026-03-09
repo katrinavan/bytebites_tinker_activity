@@ -1,22 +1,22 @@
-# ByteBites Final UML Design
+# Draft UML from Copilot
 
-## Customer
+Customer
 - name: str
 - purchase_history: list[Transaction]
 
-## FoodItem
+FoodItem
 - name: str
 - price: float
 - category: str
 - popularity_rating: int
 
-## Menu
+Menu
 - items: list[FoodItem]
 
-## Transaction
+Transaction
 - selected_items: list[FoodItem]
 
-## Relationships
+Relationships
 - Customer --> Transaction
 - Menu --> FoodItem
 - Transaction --> FoodItem
