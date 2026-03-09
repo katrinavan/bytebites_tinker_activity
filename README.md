@@ -51,6 +51,6 @@ One way I would guide a student without giving away the answer is by asking them
 
 ## ✅ Final Takeaway
 
-This project showed that building software is not just about writing code — it is also about interpreting requirements, organizing logic clearly, and testing whether the final system behaves as expected. The ByteBites activity made that process visible step by step, from spec to UML to scaffolds to algorithms to tests. It also highlighted that AI can be a helpful collaborator, but only when students stay focused on the actual assignment requirements. The strongest designs came from using AI as support, not as a replacement for reasoning.
+This project showed that building software is creating a design implementation first before diving into straight coding. The ByteBites activity made that process visible step by step, from spec to UML to scaffolds to algorithms to tests. It also highlighted that AI can be a helpful collaborator, but only when students stay focused on the actual assignment requirements. The strongest designs came from using AI as support, not as a replacement for reasoning.
 
 ---
